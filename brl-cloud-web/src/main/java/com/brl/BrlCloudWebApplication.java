@@ -17,7 +17,7 @@ public class BrlCloudWebApplication {
     public static void main(String[] args) {
         long s = System.currentTimeMillis();
         SpringApplication.run(BrlCloudWebApplication.class, args);
-        log.info(">>>>>>>> 启动成功！耗时："+(System.currentTimeMillis() - s)+"ms");
+        log.info(">>>>>>>> brl-cloud-web 启动成功！耗时："+(System.currentTimeMillis() - s)+"ms");
     }
 
 }

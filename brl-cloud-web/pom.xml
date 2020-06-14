@@ -32,6 +32,14 @@
             <version>0.2.7</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-spring-context -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-spring-context</artifactId>
+            <version>0.3.1</version>
+        </dependency>
+
+
         <!-- alibaba的druid数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
