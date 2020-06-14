@@ -12,7 +12,7 @@
 
 	<!-- 子工程 -->
 	<modules>
-
+		<module>brl-cloud-web</module>
 	</modules>
 
 	<!-- Spring Boot Starter Parent -->
