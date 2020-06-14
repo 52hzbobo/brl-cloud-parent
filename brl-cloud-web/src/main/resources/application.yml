@@ -12,6 +12,8 @@ nacos:
   # nacos 配置中心
   config:
     server-addr: 124.70.221.13:8848
+    namespace: 4db583e8-76fb-48db-8a61-9fa352c0012f
   # nacos 注册中心
   discovery:
     server-addr: 124.70.221.13:8848
+    namespace: 4db583e8-76fb-48db-8a61-9fa352c0012f
