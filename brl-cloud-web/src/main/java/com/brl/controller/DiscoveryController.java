@@ -5,6 +5,7 @@ import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
 import com.brl.dao.UserDao;
+import com.brl.kafka.KafkaProducer;
 import com.brl.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -37,6 +38,10 @@ public class DiscoveryController {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private KafkaProducer kafkaProducer;
+
+
 
     @RequestMapping(value = "/get", method = GET)
     @ResponseBody
@@ -50,7 +55,10 @@ public class DiscoveryController {
         }
         User u1 = userDao.getById(1L);
         User u2 = userDao.findByUserNameXmlSql("15959276686");
-
+        for(int i =0 ; i < 10000; i++){
+            u2.setNowTime(System.currentTimeMillis());
+            kafkaProducer.send(u2);
+        }
         result = result +"By Time:"+ System.currentTimeMillis();
         System.err.println(result);
         redisTemplate.opsForValue().set(key, result,60l , TimeUnit.SECONDS);

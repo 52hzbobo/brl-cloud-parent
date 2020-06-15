@@ -2,6 +2,7 @@ package com.brl.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * 开发: Bruce.Liu By 2018/11/12 上午8:23 Create
  */
 @Data
-public class User {
+public class User implements Serializable {
 
     private Long userId ;
 
@@ -19,5 +20,7 @@ public class User {
     private String password ;
 
     private Date createTime ;
+
+    private Long nowTime ;
 
 }
