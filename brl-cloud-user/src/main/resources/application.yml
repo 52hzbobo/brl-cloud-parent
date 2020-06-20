@@ -1,21 +1,13 @@
-# server
+# user-server
 server:
-  port: 8200
+  port: 8301
 
 # Spring
 spring:
   application:
-    name: brl-cloud-web
+    name: brl-cloud-user
   profiles:
     active: dev
-
-feign:
-  hystrix:
-    enabled: false
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
 
 ---
 # 开发环境

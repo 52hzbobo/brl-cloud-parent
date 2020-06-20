@@ -13,6 +13,7 @@
 	<!-- 子工程 -->
 	<modules>
 		<module>brl-base-dao</module>
+		<module>brl-cloud-user</module>
 		<module>brl-cloud-web</module>
 	</modules>
 

@@ -4,9 +4,7 @@ import com.alibaba.nacos.api.annotation.NacosInjected;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
-import com.brl.dao.UserDao;
 import com.brl.kafka.KafkaProducer;
-import com.brl.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -32,14 +30,15 @@ public class DiscoveryController {
     private NamingService namingService;
 
 
+
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
     private KafkaProducer kafkaProducer;
+
+    //@Autowired
+    //private UserFeignServer userFeignServer;
 
 
 
@@ -53,12 +52,13 @@ public class DiscoveryController {
             System.err.println("cache:"+redisTemplate.opsForValue().get(key));
             result+=" Cache ";
         }
-        User u1 = userDao.getById(1L);
-        User u2 = userDao.findByUserNameXmlSql("15959276686");
-        for(int i =0 ; i < 1; i++){
-            u2.setNowTime(System.currentTimeMillis());
-            kafkaProducer.send(u2);
-        }
+       // userFeignServer.getUserByAccount("15959276686");
+//        User u1 = userDao.getById(1L);
+//        User u2 = userDao.findByUserNameXmlSql("15959276686");
+//        for(int i =0 ; i < 1; i++){
+//            u2.setNowTime(System.currentTimeMillis());
+//            kafkaProducer.send(u2);
+//        }
         result = result +"By Time:"+ System.currentTimeMillis();
         System.err.println(result);
         redisTemplate.opsForValue().set(key, result,60l , TimeUnit.SECONDS);

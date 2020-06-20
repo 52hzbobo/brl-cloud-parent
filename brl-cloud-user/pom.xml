@@ -8,9 +8,9 @@
         <version>1.0</version>
     </parent>
     <groupId>com.brl</groupId>
-    <artifactId>brl-cloud-web</artifactId>
-    <name>brl-cloud-web</name>
-    <description>业务Web提供端</description>
+    <artifactId>brl-cloud-user</artifactId>
+    <name>brl-cloud-user</name>
+    <description>用户服务</description>
 
 
     <properties>
@@ -40,15 +40,17 @@
         </dependency>
 
         <dependency>
+            <groupId>com.brl</groupId>
+            <artifactId>brl-base-dao</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
-
 
     </dependencies>
 
