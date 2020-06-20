@@ -55,7 +55,7 @@ public class DiscoveryController {
         }
         User u1 = userDao.getById(1L);
         User u2 = userDao.findByUserNameXmlSql("15959276686");
-        for(int i =0 ; i < 10000; i++){
+        for(int i =0 ; i < 1; i++){
             u2.setNowTime(System.currentTimeMillis());
             kafkaProducer.send(u2);
         }
