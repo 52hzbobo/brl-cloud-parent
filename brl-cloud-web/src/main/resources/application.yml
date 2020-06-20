@@ -7,7 +7,7 @@ spring:
   application:
     name: brl-cloud-web
   profiles:
-    active: rc
+    active: dev
 
 ---
 # 开发环境
