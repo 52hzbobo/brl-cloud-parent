@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.brl</groupId>
-        <artifactId>brl-cloud-parent</artifactId>
+        <artifactId>brl-single-parent</artifactId>
         <version>1.0</version>
     </parent>
     <groupId>com.brl</groupId>
-    <artifactId>brl-cloud-user</artifactId>
-    <name>brl-cloud-user</name>
+    <artifactId>brl-single-user</artifactId>
+    <name>brl-single-user</name>
     <description>用户服务</description>
 
 

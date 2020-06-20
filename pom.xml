@@ -5,16 +5,16 @@
 
 	<!-- 主工程 -->
 	<groupId>com.brl</groupId>
-	<artifactId>brl-cloud-parent</artifactId>
+	<artifactId>brl-single-parent</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>brl-cloud-parent</name>
+	<name>brl-single-parent</name>
 
 	<!-- 子工程 -->
 	<modules>
 		<module>brl-base-dao</module>
-		<module>brl-cloud-user</module>
-		<module>brl-cloud-web</module>
+		<module>brl-single-user</module>
+		<module>brl-single-web</module>
 	</modules>
 
 	<!-- Spring Boot Starter Parent -->

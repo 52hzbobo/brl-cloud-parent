@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.brl</groupId>
-        <artifactId>brl-cloud-parent</artifactId>
+        <artifactId>brl-single-parent</artifactId>
         <version>1.0</version>
     </parent>
     <groupId>com.brl</groupId>
-    <artifactId>brl-cloud-web</artifactId>
-    <name>brl-cloud-web</name>
+    <artifactId>brl-single-web</artifactId>
+    <name>brl-single-web</name>
     <description>业务Web提供端</description>
 
 
