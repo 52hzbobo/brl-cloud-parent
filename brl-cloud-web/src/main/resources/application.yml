@@ -9,14 +9,6 @@ spring:
   profiles:
     active: dev
 
-feign:
-  hystrix:
-    enabled: false
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
-
 ---
 # 开发环境
 spring:
