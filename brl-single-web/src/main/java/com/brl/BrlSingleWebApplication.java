@@ -36,7 +36,7 @@ public class BrlSingleWebApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // 注册服务到Nacos
+        // 注册服务到Nacos(单体应用可以无需注册到nacos)
         namingService.registerInstance(applicationName, "127.0.0.1", serverPort);
     }
 }
