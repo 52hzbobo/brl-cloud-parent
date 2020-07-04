@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableNacosDiscovery
 @NacosPropertySource(dataId = "brl-cloud-base", autoRefreshed = true, type = ConfigType.YAML)
-public class BrlCloudWebApplication implements CommandLineRunner {
+public class BrlSingleUserApplication implements CommandLineRunner {
 
     @NacosInjected
     private NamingService namingService;
@@ -27,16 +27,15 @@ public class BrlCloudWebApplication implements CommandLineRunner {
     @Value("${server.port}")
     private Integer serverPort;
 
-
     public static void main(String[] args) {
         long s = System.currentTimeMillis();
-        SpringApplication.run(BrlCloudWebApplication.class, args);
-        log.info(">>>>>>>> brl-cloud-web 启动成功！耗时："+(System.currentTimeMillis() - s)+"ms");
+        SpringApplication.run(BrlSingleUserApplication.class, args);
+        log.info(">>>>>>>> brl-cloud-user 启动成功！耗时："+(System.currentTimeMillis() - s)+"ms");
     }
 
     @Override
     public void run(String... args) throws Exception {
-        // 注册服务到Nacos
+        // 通过Naming服务注册实例到注册中心
         namingService.registerInstance(applicationName, "127.0.0.1", serverPort);
     }
 }

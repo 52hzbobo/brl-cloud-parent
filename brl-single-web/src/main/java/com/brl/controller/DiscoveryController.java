@@ -52,14 +52,8 @@ public class DiscoveryController {
             System.err.println("cache:"+redisTemplate.opsForValue().get(key));
             result+=" Cache ";
         }
-       // userFeignServer.getUserByAccount("15959276686");
-//        User u1 = userDao.getById(1L);
-//        User u2 = userDao.findByUserNameXmlSql("15959276686");
-//        for(int i =0 ; i < 1; i++){
-//            u2.setNowTime(System.currentTimeMillis());
-//            kafkaProducer.send(u2);
-//        }
         result = result +"By Time:"+ System.currentTimeMillis();
+        kafkaProducer.send(result);
         System.err.println(result);
         redisTemplate.opsForValue().set(key, result,60l , TimeUnit.SECONDS);
 
