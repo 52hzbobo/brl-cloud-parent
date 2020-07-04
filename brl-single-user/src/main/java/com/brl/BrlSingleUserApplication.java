@@ -35,7 +35,7 @@ public class BrlSingleUserApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // 通过Naming服务注册实例到注册中心
+        // 通过Naming服务注册实例到注册中心（单体应用可以无需注册到naco）
         namingService.registerInstance(applicationName, "127.0.0.1", serverPort);
     }
 }
